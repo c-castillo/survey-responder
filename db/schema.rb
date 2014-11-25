@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141125011531) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: true do |t|
     t.integer  "survey_id"
     t.integer  "question_id"
@@ -21,9 +24,9 @@ ActiveRecord::Schema.define(version: 20141125011531) do
     t.datetime "updated_at"
   end
 
-  add_index "answers", ["choice_id"], name: "index_answers_on_choice_id"
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
-  add_index "answers", ["survey_id"], name: "index_answers_on_survey_id"
+  add_index "answers", ["choice_id"], name: "index_answers_on_choice_id", using: :btree
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+  add_index "answers", ["survey_id"], name: "index_answers_on_survey_id", using: :btree
 
   create_table "choices", force: true do |t|
     t.integer  "question_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 20141125011531) do
     t.datetime "updated_at"
   end
 
-  add_index "choices", ["question_id"], name: "index_choices_on_question_id"
+  add_index "choices", ["question_id"], name: "index_choices_on_question_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.string   "view_type"
