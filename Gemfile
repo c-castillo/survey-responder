@@ -29,6 +29,11 @@ gem 'spring',        group: :development
 
 gem 'thin'
 gem 'kaminari'
+
+#Add railsadmin for administration dashboard
+gem 'rails_admin'
+#Add devise for authentication
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -3,7 +3,7 @@
   <% q.choices.sort{|a,b| a.name.to_i <=> b.name.to_i}.each do |choice| %>
     <span class="option_separator">
       <%= display_percent(choice) %>
-      <%= f.radio_button :choice_id, choice.id, {style: "display:none"} %>
+      <%= f.radio_button :choice_id, choice.id %>
     </span>
   <% end %>
 </p>
