@@ -1,0 +1,7 @@
+<p>
+  <%= f.hidden_field :question_id, value: q.id %>
+  <% q.choices.each do |choice| %>
+    <%= choice.name %>
+    <%= f.radio_button :choice_id, choice.id %>
+  <% end %>
+</p>

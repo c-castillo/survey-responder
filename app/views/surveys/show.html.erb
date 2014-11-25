@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Locale:</strong>
+  <%= @survey.locale %>
+</p>
+
+<p>
+  <strong>Step:</strong>
+  <%= @survey.step %>
+</p>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>
