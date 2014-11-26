@@ -1,9 +1,13 @@
-<p>
+<div>
   <%= f.hidden_field :question_id, value: q.id %>
   <% q.choices.sort{|a,b| a.name.to_i <=> b.name.to_i}.each do |choice| %>
-    <span class="option_separator">
-      <%= display_percent(choice) %>
+    <span class="option-group">
       <%= f.radio_button :choice_id, choice.id %>
+      <%= f.label :choice_id, value: choice.id, style: display_percent(choice) do %>
+        <span class="percentage">
+          <%= choice.name %><span class="percentage-symbol">%</span>
+        </span>
+      <% end %>
     </span>
   <% end %>
-</p>
+</div>

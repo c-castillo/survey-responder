@@ -15,7 +15,7 @@
 
     <% @questions.each do |question| %>
       <div class="field">
-        <%= question.title %><br>
+        <h1><%= question.title %></h1>
         <%= f.fields_for :answers do |builder| %>
           <%= render 'answer_fields', f: builder, q: question  %>
         <% end %>
@@ -23,6 +23,6 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit "NEXT", {class: 'btn btn-default'} %>
+      <%= f.submit "NEXT", {class: 'btn-submit-answers'} %>
     </div>
   <% end %>
