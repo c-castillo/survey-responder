@@ -1,5 +1,16 @@
 RailsAdmin.config do |config|
 
+  config.included_models = ["Survey", "Answer"]
+
+  config.model 'Survey' do
+    list do
+      field :created_at do
+        label "Answered on"
+      end
+      field :answers
+    end
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -20,8 +31,6 @@ RailsAdmin.config do |config|
     dashboard                     # mandatory
     index                         # mandatory
     new
-    export
-    bulk_delete
     show
     edit
     delete
