@@ -44,7 +44,7 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to @survey, notice: 'Thanks for your submission!' }
+        format.html { redirect_to @survey, notice:  I18n.t('thanks') }
         format.json { render :show, status: :ok, location: @survey }
       else
         format.html { render :edit }

@@ -19,7 +19,8 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  step: "Step"
-  thanks: "Thanks for your submission!"
-  of: "of"
+es:
+  step: "Paso"
+  thanks: "Gracias por responder!"
+  of: "de"
+
