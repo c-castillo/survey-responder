@@ -1,14 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Locale:</strong>
-  <%= @survey.locale %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Step:</strong>
-  <%= @survey.step %>
-</p>
+  <header>
+    <div class="step">
+      <div class="step-text"></div>
+      <div class="step-number"></div>
+    </div>
+    <div class="logo">VERIZON</div>
+    <div class="language">Español
+      <div class="dropdown">
+        <ul>
+          <li>Español</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+  <div class="form-wrapper">
+      <p id="notice"><%= notice %></p>
+      <%= link_to 'Answer Again', new_survey_path %>
+  </div>
+
+</div>
