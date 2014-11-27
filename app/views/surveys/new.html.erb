@@ -7,13 +7,15 @@
     	<div class="step-number">2 <%= t('of') %> 3</div>
     </div>
     <div class="logo">VERIZON</div>
-    <div class="language">English
-      <div class="dropdown">
+    <div class="language">
+      <ul>
+      <li><%= language_name(I18n.locale) %>
         <ul>
-          <li>Español</li>
-          <li>English</li>
+          <li><%= link_to_unless I18n.locale == :en, "English", locale: :en %></li>
+          <li><%= link_to_unless I18n.locale == :es, "Español", locale: :es %></li>
         </ul>
-      </div>
+        </li>
+      </ul>
     </div>
   </header>
 
