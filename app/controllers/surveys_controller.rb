@@ -30,7 +30,7 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
+        format.html { redirect_to @survey, notice: I18n.t('thanks'), locale: params[:locale] }
         format.json { render :show, status: :created, location: @survey }
       else
         format.html { render :new }

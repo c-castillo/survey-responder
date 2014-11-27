@@ -7,19 +7,21 @@
       <div class="step-number"></div>
     </div>
     <div class="logo">VERIZON</div>
-    <div class="language">Español
-      <div class="dropdown">
+    <div class="language">
+      <ul>
+      <li><%= language_name(I18n.locale) %>
         <ul>
-          <li>Español</li>
-          <li>English</li>
+          <li><%= link_to_unless I18n.locale == :en, "English", locale: :en %></li>
+          <li><%= link_to_unless I18n.locale == :es, "Español", locale: :es %></li>
         </ul>
-      </div>
+        </li>
+      </ul>
     </div>
   </header>
 
   <div class="form-wrapper">
       <p id="notice"><%= notice %></p>
-      <%= link_to 'Answer Again', new_survey_path %>
+      <%= link_to I18n.t('answer_again'), new_survey_path %>
   </div>
 
 </div>
